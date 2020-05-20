@@ -62,6 +62,7 @@ console.log(resp)
         if (resp.success) {
           this._authService.saveSessionInLocal(resp.result);
           message.type = 'success';
+          this.router.navigate(['/layout']);
         }
         else {
           message.type = 'error';
