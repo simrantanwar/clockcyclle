@@ -1,0 +1,17 @@
+<!-- <div *ngIf="show">
+    <p>{{response.message}}</p>
+
+</div> -->
+
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" *ngIf="show" [ngClass]="{'toast-success':response.type=='success', 'toast-error':response.type=='error'}">
+    <div class="toast-header">
+        <div class="icon mr-4"></div>
+        <strong class="mr-auto">{{response.type == 'success' ? 'Success' : response.type == 'error' ?'Failure'
+            : response.type == 'info' ? 'Info' : 'Warning'}}</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true" (click)="closeToaster()">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+        {{response.msg}} </div>
+</div>

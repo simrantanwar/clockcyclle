@@ -1,0 +1,34 @@
+.toast {
+    opacity: 1 !important;
+    right: 0.5rem;
+    position: fixed;
+    top: 2rem;
+    color: white;
+    width: 296px;
+}
+
+.toast-success {
+    background-color: rgb(39, 124, 39);
+}
+
+.toast-error {
+    background-color: crimson;
+}
+
+.toast-info {
+    background-color: cornflowerblue;
+}
+
+.toast-warning {
+    background-color: rgb(66, 66, 9);
+}
+
+.icon::after {
+    width: 16px;
+    height: 15px;
+    content: "";
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+}

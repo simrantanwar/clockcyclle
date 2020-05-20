@@ -1,0 +1,37 @@
+<div class="formBody">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <div class="mb-5">
+                    <mat-form-field class="inputLine">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput type="text" formControlName="email">
+                    </mat-form-field>
+                </div>
+                <div class="mb-5">
+                    <mat-form-field class="inputLine">
+                        <mat-label>Password</mat-label>
+
+                        <input matInput [type]="show ? 'text' : 'password'" formControlName="password">
+                        <i [class]="show_eye ? 'fa fa-eye fa-lg' : 'fa fa-eye-slash fa-lg'" (click)="showPassword()"></i>
+                    </mat-form-field>
+                </div>
+
+                <div class="mb-2" style="height: 6rem;">
+                    <button class="btn btn-primary mb-3" [disabled]="loginForm.invalid || showLoader">Login</button>
+
+                    <div *ngIf="showLoader">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mt-2">
+                    <a [routerLink]="['/forgotPassword']">TROUBLE SIGNING IN?</a>
+                </div>
+            </form>
+        </div>
+    </div>
